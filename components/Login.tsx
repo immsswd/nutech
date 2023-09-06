@@ -2,10 +2,13 @@
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 export function Login() {
+  const router = useRouter();
   const handleSubmit = (event: any) => {
     event.preventDefault();
+    router.push("/home");
     console.log("submited");
   };
   return (
