@@ -13,8 +13,6 @@ export function Login() {
   };
   return (
     <>
-      {/* logo and system's name */}
-
       <div className="flex justify-center items-center space-x-4">
         <section>
           <Image
