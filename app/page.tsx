@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Auth from "./auth";
+import AuthPage from "./authPage";
 
 export default function Home() {
   return (
     // <div className="flex min-h-screen flex-col items-center justify-between p-24">
     <div className="flex flex-col-reverse md:flex-row justify-center items-center">
       <div className="w-full md:w-1/2 bg-white">
-        <Auth />
+        <AuthPage />
       </div>
       <div className="w-full md:w-1/2">
         <Image

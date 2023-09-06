@@ -20,13 +20,13 @@ export default function Navbar() {
               </Link>
             </section>
             <section className="flex space-x-8">
-              <Link href={``} className="text-sm">
+              <Link href={`/pembayaran`} className="text-sm">
                 Top Up
               </Link>
-              <Link href={``} className="text-sm">
+              <Link href={`/transaction`} className="text-sm">
                 Transaction
               </Link>
-              <Link href={``} className="text-sm">
+              <Link href={`/akun`} className="text-sm">
                 Akun
               </Link>
             </section>

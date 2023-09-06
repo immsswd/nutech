@@ -1,9 +1,13 @@
-
+// "use client";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { Button } from "./ui/button";
 
 export function Login() {
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    console.log("submited");
+  };
   return (
     <>
       {/* logo and system's name */}
@@ -23,10 +27,12 @@ export function Login() {
         Masuk atau buat akun untuk memulai{" "}
       </h1>
       {/* Form Login*/}
-      <div className="w w-8/12 my-10 flex flex-col gap-4">
-        <Input type="email" placeholder="Masukkan email anda" />
-        <Input type="password" placeholder="Masukkan password anda" />
-        <Button variant="destructive">Masuk</Button>
+      <div className="w-8/12">
+        <form onSubmit={handleSubmit} className=" my-10 flex flex-col gap-4">
+          <Input type="email" placeholder="Masukkan email anda" />
+          <Input type="password" placeholder="Masukkan password anda" />
+          <Button variant="destructive">Masuk</Button>
+        </form>
       </div>
     </>
   );

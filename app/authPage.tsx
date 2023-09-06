@@ -5,7 +5,7 @@ import Link from "next/link";
 import RegistrationForm from "@/components/Registration";
 import { Login } from "@/components/Login";
 
-export default function Auth() {
+export default function AuthPage() {
   const [showRegist, setShowRegist] = useState(false);
 
   const toggleView = () => {

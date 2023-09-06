@@ -1,10 +1,13 @@
-
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { Button } from "./ui/button";
 
 const formLabel = [
-  { placeholder: "Masukkan email anda", type: "email" },
+  {
+    placeholder: "Masukkan email anda",
+    type: "email",
+    pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$",
+  },
   { placeholder: "Nama depan", type: "" },
   { placeholder: "Nama belakang", type: "" },
   { placeholder: "Buat password", type: "password" },
@@ -29,12 +32,14 @@ export default function RegistrationForm() {
         Lengkapi data untuk membuat akun
       </h1>
       {/* Form Login*/}
-      <div className="w w-8/12 my-10 flex flex-col gap-4">
-        {formLabel.map((formLabel, index) => (
-          <Input key={index + ""} {...formLabel} />
-        ))}
+      <div className="w-8/12 ">
+        <form className="my-10 flex flex-col gap-4">
+          {formLabel.map((formLabel, index) => (
+            <Input key={index + ""} {...formLabel} />
+          ))}
 
-        <Button variant="destructive">Registrasi</Button>
+          <Button variant="destructive">Registrasi</Button>
+        </form>
       </div>
     </>
   );
