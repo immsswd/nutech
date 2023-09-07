@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { userLoginValidation } from "@/lib/userLoginValidation";
+import { AlertOnLogin } from "./AlertOnLogin";
 
 type Inputs = {
   email: string;
@@ -52,6 +53,9 @@ export function Login() {
       <h1 className="text-lg font-semibold">
         Masuk atau buat akun untuk memulai{" "}
       </h1>
+      <div className="pt-7 max-w-sm">
+        <AlertOnLogin />
+      </div>
       {/* Form Login*/}
       <div className="w-8/12">
         <form

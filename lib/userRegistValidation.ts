@@ -20,7 +20,7 @@ export const userRegisterSchema = z
     password: z
       .string()
       .min(5, { message: "Password wajib diisi min 5 karakter" }),
-    passwordKonfirmasi: z.string().min(5),
+    passwordKonfirmasi: z.string().min(5, { message: "minimal 5 karakter" }),
   })
   .refine((data) => data.password === data.passwordKonfirmasi, {
     message: "Password tidak sama",
