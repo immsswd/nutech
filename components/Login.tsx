@@ -25,10 +25,13 @@ export function Login() {
     },
     resolver: zodResolver(userLoginValidation),
   });
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
-
   const router = useRouter();
-  // const handleSubmit = (event: any) => {
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    router.push("/home");
+    console.log(data);
+  };
+
+  // const submitHandler = (event: any) => {
   //   event.preventDefault();
   //   router.push("/home");
   //   console.log("submited");
@@ -60,10 +63,11 @@ export function Login() {
               type="email"
               id="email"
               placeholder="Masukkan email anda"
-              className={errors.email ? `border-red-500` : ``}
-              {...register}
+              disabled={isSubmitting}
+              className={errors.email?.message ? `border-red-500` : ``}
+              {...register("email")}
             />
-            {errors.email && (
+            {errors.email?.message && (
               <div className="text-xs text-redNutech">
                 {errors.email?.message}
               </div>
@@ -74,10 +78,12 @@ export function Login() {
             <Input
               type="password"
               id="password"
-              className={errors.password ? `border-red-500` : ``}
+              disabled={isSubmitting}
+              className={errors.password?.message ? `border-red-500` : ``}
               placeholder="Masukkan password anda"
+              {...register("password")}
             />
-            {errors.password && (
+            {errors.password?.message && (
               <div className="text-xs text-redNutech">
                 {errors.password?.message}
               </div>
