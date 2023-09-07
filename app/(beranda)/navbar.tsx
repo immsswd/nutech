@@ -1,8 +1,12 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { log } from "console";
 
 export default function Navbar() {
+  const pathname = usePathname();
   return (
     <>
       <div className="border-b-2">
@@ -20,13 +24,30 @@ export default function Navbar() {
               </Link>
             </section>
             <section className="flex space-x-8">
-              <Link href={`/topup`} className="text-sm">
+              <Link
+                href={`/topup`}
+                className={`${
+                  pathname == "/topup" ? "text-redNutech text-sm" : "text-sm"
+                }`}
+              >
                 Top Up
               </Link>
-              <Link href={`/transaction`} className="text-sm">
+              <Link
+                href={`/transaction`}
+                className={`${
+                  pathname == "/transaction"
+                    ? "text-redNutech text-sm"
+                    : "text-sm"
+                }`}
+              >
                 Transaction
               </Link>
-              <Link href={`/akun`} className="text-sm">
+              <Link
+                href={`/akun`}
+                className={`${
+                  pathname == "/akun" ? "text-redNutech text-sm" : "text-sm"
+                }`}
+              >
                 Akun
               </Link>
             </section>
