@@ -1,14 +1,21 @@
-import Image from "next/image";
+"use client";
+
+import { useRouter } from "next/navigation";
 import React from "react";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Button } from "./ui/button";
 
 export default function Akun() {
+  const router = useRouter();
+  const submitHandler = (e: any) => {
+    e.preventDefault();
+    router.push("/");
+  };
   return (
     <React.Fragment>
       <div className="grid w-full max-w-sm items-center gap-1.5">
-        <form className="flex flex-col gap-4">
+        <form onSubmit={submitHandler} className="flex flex-col gap-4">
           <div>
             <Label htmlFor="email">Email</Label>
             <Input type="email" id="email" placeholder="Email" />
